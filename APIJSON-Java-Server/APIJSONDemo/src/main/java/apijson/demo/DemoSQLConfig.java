@@ -31,7 +31,7 @@ public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray>
 
 	static {
 		DEFAULT_DATABASE = DATABASE_MYSQL;  // TODO 默认数据库类型，改成你自己的
-		DEFAULT_SCHEMA = "sys";  // TODO 默认数据库名/模式，改成你自己的，默认情况是 MySQL: sys, PostgreSQL: public, SQL Server: dbo, Oracle: 
+		DEFAULT_SCHEMA = "apijson_sys";  // TODO 默认数据库名/模式，改成你自己的，默认情况是 MySQL: sys, PostgreSQL: public, SQL Server: dbo, Oracle:
 
         // 表名和数据库不一致的，需要配置映射关系。只使用 APIJSONORM 时才需要；
         // 如果用了 apijson-framework 且调用了 APIJSONApplication.init 则不需要
@@ -46,7 +46,7 @@ public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray>
 
 	@Override
 	public String gainDBVersion() {
-		return "5.7.22";  // "8.0.11";  // TODO 改成你自己的 MySQL 或 PostgreSQL 数据库版本号  // MYSQL 8 和 7 使用的 JDBC 配置不一样
+		return "8.0.38";  // "8.0.11";  // TODO 改成你自己的 MySQL 或 PostgreSQL 数据库版本号  // MYSQL 8 和 7 使用的 JDBC 配置不一样
 	}
 
 	@JSONField(serialize = false)  // 不在日志打印 账号/密码 等敏感信息
@@ -64,7 +64,7 @@ public class DemoSQLConfig extends APIJSONSQLConfig<Long, JSONObject, JSONArray>
 	@JSONField(serialize = false)  // 不在日志打印 账号/密码 等敏感信息
 	@Override
 	public String gainDBPassword() {
-		return "apijson";  // TODO 改成你自己的，TiDB 可以当成 MySQL 使用， 默认密码为空字符串 ""
+		return "123456";  // TODO 改成你自己的，TiDB 可以当成 MySQL 使用， 默认密码为空字符串 ""
 	}
 
 }
